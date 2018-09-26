@@ -1,0 +1,43 @@
+#include<iostream.h>
+
+class Distance
+{
+private :
+int foot, inch;
+public :
+Distance (): foot (0), inch(0){}
+Distance  (int f, int in) : foot (f),inch(in) {}
+
+void getdist()
+{
+cout<<"enter foot = "; 	cin>>foot;
+cout<<"enter inch = "; cin >>inch;
+}
+void disdist()
+{
+cout<<foot << "-"<<inch<< endl;}
+void sub_dist(Distance,Distance);
+};
+void Distance::sub_dist(Distance d2, Distance d3)
+{
+inch=d2.inch-d3.inch;
+foot =0;
+foot-=d2.foot-d3.foot;
+}
+int main ()
+{
+Distance dist1,dist3;
+Distance dist2(5,7);
+dist1.getdist();
+dist2.disdist();
+dist1.disdist();
+dist3.sub_dist(dist1,dist2);
+cout<<"\ndist1 =";
+dist1.disdist();
+cout<<"\n dist2 =" ;
+dist2.disdist();
+cout<<"\n dist3 =";
+dist3.disdist();
+cout<<endl;
+return 0;
+}
